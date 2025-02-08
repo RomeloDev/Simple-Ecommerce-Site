@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-Commerce App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Romelo's Shop</h2>
+            <nav>
+                <ul>
+                    <li><a href="#home" id="home-nav">Home</a></li>
+                    <li><a href="#products" id="products-nav">Products</a></li>
+                    <li><a href="#cart" id="cart-nav">Cart</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <!-- Home Section -->
+            <section id="home" style="display: none;">
+                <div class="home-content">
+                    <h1>Discover the latest iPhones</h1>
+                    <button class="shop-btn">SHOP NOW</button>
+                </div>
+            </section>
+
+            <!-- Product Section -->
+            <section id="products" style="display: block;">
+                <h2 class="section-title">Our Products</h2>
+                <div class="product-content">
+                    <div class="product-card">
+                        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009278906" alt="iPhone 15 Pro">
+                        <h3>iPhone 15 Pro</h3>
+                        <p>The ultimate iPhone experience.</p>
+                        <p class="price">$999</p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Section -->
+             <section id="cart">
+                
+             </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
