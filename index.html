@@ -20,7 +20,7 @@
         </aside>
         <main class="content">
             <!-- Home Section -->
-            <section id="home" style="display: none;">
+            <section id="home" style="display: block;">
                 <div class="home-content">
                     <h1>Discover the latest iPhones</h1>
                     <button class="shop-btn">SHOP NOW</button>
@@ -28,31 +28,31 @@
             </section>
 
             <!-- Product Section -->
-            <section id="products" style="display: block;">
+            <section id="products" style="display: none;">
                 <h2 class="section-title">Our Products</h2>
                 <div class="product-content">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="product1">
                         <img src="https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121032-iphone-16-pro-max.png" alt="iPhone 16 Pro Max">
                         <h3>iPhone 16 Pro Max</h3>
                         <p>6.9-inch display</p>
                         <p class="price">&#8369;84,990</p>
                         <button>Add to Cart</button>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="product2">
                         <img src="https://itronics.in/wp-content/uploads/2024/09/iPhone_16_Pro_Desert_Titanium_PDP_Image_Position_1__en-IN.png" alt="iPhone 16 Pro">
                         <h3>iPhone 16 Pro</h3>
                         <p>6.3-inch display</p>
                         <p class="price">&#8369;69,990</p>
                         <button>Add to Cart</button>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="product3">
                         <img src="https://beyondthebox.ph/cdn/shop/files/IPHONE16PLUS1_COLOR-ULTRAMARINE_CAPACITY-ALL_700x.png?v=1728462931" alt="iPhone 16 Plus">
                         <h3>iPhone 16 Plus</h3>
                         <p>6.7-inch display</p>
                         <p class="price">&#8369;62,990</p>
                         <button>Add to Cart</button>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="product4">
                         <img src="https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-16.png" alt="iPhone 16">
                         <h3>iPhone 16</h3>
                         <p>6.1-inch display</p>
@@ -64,10 +64,38 @@
             </section>
 
             <!-- Cart Section -->
-             <section id="cart">
-                
-             </section>
+            <section id="cart" style="display: none;">
+                <h2 class="section-title">Your Cart</h2>
+                <div class="product-content cart-content">
+
+                </div>
+                <div class="cart-total">
+                    Total: &#8369;0.00
+                </div>
+            </section>
         </main>
+
+        <!-- Pop Up Form When Adding to cart -->
+        <!-- <div class="pop-up">
+            <div class="popup-content">
+                <h3 class="popup-title">Confirmation Form</h3>
+                <form>
+                    <p>Product Name:</p>
+                    <p class="popup-product-name">Sample Product</p>
+                    <label for="storage">Select Storage:</label>
+                    <select name="storage" id="storage">
+                        <option value="128GB">128GB</option>
+                        <option value="256GB">256GB</option>
+                        <option value="512GB">512GB</option>
+                        <option value="1TB">1TB</option>
+                    </select><br>
+                    <p class="price">&#8369;0.00</p>
+                    <div class="popup-confirm-btn">
+                        <button type="submit">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div> -->
     </div>
 
     <script src="script.js"></script>

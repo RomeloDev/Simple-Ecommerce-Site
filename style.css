@@ -106,7 +106,7 @@ section{
 
 
 /* Products Section */
-#products{
+#products, #cart{
     height: 100vh;
     padding: 1rem 3%;
     background: #f9f9f9;
@@ -176,4 +176,62 @@ section{
 
 .product-card button:hover{
     background: #555;
+}
+
+/* Cart Section */
+.cart-total{
+    margin-top: 2rem;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    background: #fff;
+}
+
+/* Pop-up Form */
+.pop-up {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-title {
+    margin-bottom: 20px;
+}
+
+.popup-product-name{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.popup-confirm-btn button {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.popup-content .price{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
 }
