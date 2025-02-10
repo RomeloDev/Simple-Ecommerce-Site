@@ -156,7 +156,7 @@ section{
     color: #333;
 }
 
-.product-card p, .cart-card{
+.product-card p, .cart-card p{
     font-size: 1rem;
     color: #777;
     margin-bottom: 1rem;
@@ -196,7 +196,7 @@ section{
 }
 
 /* Pop-up Form */
-.pop-up {
+.popup-container{
     display: none;
     position: fixed;
     top: 0;
@@ -206,36 +206,81 @@ section{
     background: rgba(0, 0, 0, 0.5);
 }
 
-.popup-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+.pop-up{
+    width: 380px;
+    background: #fff;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
-    position: relative;
+    padding: 0 1rem 2rem;
+    visibility: hidden;
+    transition: transform 0.4s;
 }
 
-.popup-title {
-    margin-bottom: 20px;
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
 }
 
-.popup-product-name{
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #333;
+.pop-up i{
+    height: 100px;
+    width: 100px;
+    background-color: limegreen;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: -50px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.popup-confirm-btn button {
-    padding: 10px 20px;
+.pop-up button{
+    padding: 0.75rem 1.5rem;
     background: #333;
     color: white;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
+    transition: 0.3s;
+    font-size: 1.1rem;
+    width: 80%;
+    padding: 13px 0;
+    margin-top: 1.6rem;
 }
 
-.popup-content .price{
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
+.pop-up button:hover{
+    background: #555;
+}
+
+.pop-up p{
+    margin-top: -10px;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .product-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Will update this soon */
+    aside {
+        display: none;
+    }
+
+    .content{
+        flex: 1;
+        margin-left: 0;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
 }

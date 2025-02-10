@@ -143,6 +143,16 @@ const addProductToCart = (productName, src, display, price) => {
     updateCartDisplay(); // Call function to update cart UI
 };
 
+const popup = document.querySelector('.pop-up')
+const close_popup_btn = document.querySelector('.close-popup')
+const popup_container = document.querySelector('.popup-container')
+const section_title = document.querySelector('.section-title')
+
+const close_popup = () => {
+    popup.classList.remove('open-popup')
+    popup_container.style.display = 'none'
+}
+
 document.addEventListener('click', function(event) {
     if (event.target.matches('.product-card button')) {
         console.log('Button Clicked:', event.target);
@@ -157,7 +167,11 @@ document.addEventListener('click', function(event) {
         console.log(`Product Name: ${productName}`);
         console.log(`Product Price: ${productPrice}`);
 
+        section_title.style.zIndex = 'auto'
+        popup_container.style.display = 'block'
+        popup.classList.add('open-popup')
         addProductToCart(productName, productImage, displayInfo, productPrice);
+
     }
 });
 

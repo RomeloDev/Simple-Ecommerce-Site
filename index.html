@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple E-Commerce App</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="container">
@@ -75,27 +76,15 @@
             </section>
         </main>
 
-        <!-- Pop Up Form When Adding to cart -->
-        <!-- <div class="pop-up">
-            <div class="popup-content">
-                <h3 class="popup-title">Confirmation Form</h3>
-                <form>
-                    <p>Product Name:</p>
-                    <p class="popup-product-name">Sample Product</p>
-                    <label for="storage">Select Storage:</label>
-                    <select name="storage" id="storage">
-                        <option value="128GB">128GB</option>
-                        <option value="256GB">256GB</option>
-                        <option value="512GB">512GB</option>
-                        <option value="1TB">1TB</option>
-                    </select><br>
-                    <p class="price">&#8369;0.00</p>
-                    <div class="popup-confirm-btn">
-                        <button type="submit">Confirm</button>
-                    </div>
-                </form>
+        <!-- Pop Up Modal When Adding to cart -->
+        <div class="popup-container">
+            <div class="pop-up">
+                <i class='bx bx-check'></i>
+                <h2>Thank You!</h2>
+                <p>The product has been added to cart.</p>
+                <button onclick="close_popup()">OK</button>
             </div>
-        </div> -->
+        </div>
     </div>
 
     <script src="script.js"></script>
