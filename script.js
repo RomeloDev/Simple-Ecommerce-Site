@@ -161,8 +161,29 @@ document.addEventListener('click', function(event) {
     }
 });
 
+const removeProductFromCart = (productName) => {
+    // Filter out the product with the given productName
+    cart.products = cart.products.filter(product => product.productName !== productName);
+    
+    console.log(`Removed: ${productName}`);
+    console.log(JSON.stringify(cart, null, 2)); // Print updated cart
+    updateCartDisplay(); // Refresh the UI
+};
+
+
+document.addEventListener('click', function(event){
+    if (event.target.matches('.cart-card .remove')){
+        console.log(`Button Clicked: ${event.target}`)
+
+        const cartCard = event.target.closest('.cart-card')
+        const cardName = cartCard.querySelector('h3').textContent
+
+        removeProductFromCart(cardName)
+    }
+})
+
 // Function to update cart display
-function updateCartDisplay() {
+const updateCartDisplay = () => {
     let cart_content = document.querySelector('.cart-content');
     cart_content.innerHTML = ""; // Clear previous content
     let count_total = 0;
@@ -171,7 +192,7 @@ function updateCartDisplay() {
         const formattedPrice = product.price.toLocaleString();
 
         const cart_html = `
-            <div class="product-card">
+            <div class="cart-card">
                 <img src="${product.src}" alt="${product.productName}">
                 <h3>${product.productName}</h3>
                 <p>${product.display}</p>
