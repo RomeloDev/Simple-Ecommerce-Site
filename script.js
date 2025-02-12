@@ -6,28 +6,32 @@ const home_section = document.getElementById('home')
 const products_section = document.getElementById('products')
 const cart_section = document.getElementById('cart')
 
-// This is for navigating pages used in the sidebar
-const navigate = () => {
-    home_nav.addEventListener('click', function(){
-        home_section.style.display = "block"
-        cart_section.style.display = "none"
-        products_section.style.display = "none"
-    })
-    
-    products_nav.addEventListener('click', function(){
-        products_section.style.display = "block"
-        home_section.style.display = "none"
-        cart_section.style.display = "none"
-    })
-    
-    cart_nav.addEventListener('click', function(){
-        cart_section.style.display = "block"
-        home_section.style.display = "none"
-        products_section.style.display = "none"
-    })
-}
+const shopBtn = document.querySelector('.shop-btn')
+shopBtn.addEventListener('click', function(){
+    products_section.style.display = "block"
+    home_section.style.display = "none"
+    cart_section.style.display = "none"
+})
 
-navigate()
+// This is for navigating pages used in the sidebar
+home_nav.addEventListener('click', function(){
+    home_section.style.display = "block"
+    cart_section.style.display = "none"
+    products_section.style.display = "none"
+})
+
+products_nav.addEventListener('click', function(){
+    products_section.style.display = "block"
+    home_section.style.display = "none"
+    cart_section.style.display = "none"
+})
+
+cart_nav.addEventListener('click', function(){
+    cart_section.style.display = "block"
+    home_section.style.display = "none"
+    products_section.style.display = "none"
+})
+
 
 // //Product Data
 // const products = {
@@ -135,9 +139,10 @@ navigate()
 //     }
 // });
 
-
+// This object is for storing data when user add a product to cart
 let cart = { products: [] };
 
+// 
 const addProductToCart = (productName, src, display, price) => {
     cart.products.push({ productName, src, display, price });
     updateCartDisplay(); // Call function to update cart UI
@@ -167,10 +172,22 @@ document.addEventListener('click', function(event) {
         console.log(`Product Name: ${productName}`);
         console.log(`Product Price: ${productPrice}`);
 
-        section_title.style.zIndex = 'auto'
-        popup_container.style.display = 'block'
-        popup.classList.add('open-popup')
-        addProductToCart(productName, productImage, displayInfo, productPrice);
+        let isInside = false
+        for (let i = 0; i < cart.products.length; i++){
+            if(cart.products[i].productName === productName){
+                console.log('product is in the object')
+                isInside = true
+            }
+        }
+
+        if(!isInside){
+            popup.classList.add('open-popup')
+            popup_container.style.display = 'block'
+            section_title.style.zIndex = 'auto'
+            addProductToCart(productName, productImage, displayInfo, productPrice);
+        }else{
+            alert('Product is already has been added to cart')
+        }
 
     }
 });
